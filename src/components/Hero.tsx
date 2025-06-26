@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
               <div className="overflow-hidden">
                 <h1 className="text-5xl md:text-7xl font-bold text-white animate-slide-up">
                   <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                    John Doe
+                    Harshan
                   </span>
                 </h1>
               </div>
@@ -137,7 +137,7 @@ const Hero: React.FC = () => {
               {[
                 { icon: Github, href: '#', label: 'GitHub' },
                 { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { icon: Mail, href: '#', label: 'Email' },
+                { icon: Mail, href: 'mailto:harshanofficial05@gmail.com', label: 'Email' },
               ].map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* 3D AI Puzzle Profile */}
+          {/* Profile Image with 3D Effects */}
           <div className="relative flex justify-center lg:justify-end">
             <div 
               className="relative transform transition-transform duration-1000 ease-out"
@@ -183,11 +183,18 @@ const Hero: React.FC = () => {
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full blur-xl opacity-30 scale-110 animate-pulse"></div>
               
-              {/* Main profile container with puzzle effect */}
+              {/* Main profile container */}
               <div className="relative w-80 h-80 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full p-1 transform hover:scale-105 transition-transform duration-500">
                 <div className="w-full h-full bg-gray-900 rounded-full flex items-center justify-center overflow-hidden relative">
+                  {/* Profile Image */}
+                  <img 
+                    src="/Image.jpg" 
+                    alt="Harshan - AI-Powered Full Stack Developer"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                  
                   {/* AI Circuit Pattern Overlay */}
-                  <div className="absolute inset-0 opacity-20">
+                  <div className="absolute inset-0 opacity-10 hover:opacity-20 transition-opacity duration-500">
                     <svg className="w-full h-full" viewBox="0 0 100 100">
                       <defs>
                         <pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -201,27 +208,6 @@ const Hero: React.FC = () => {
                       </defs>
                       <rect width="100" height="100" fill="url(#circuit)"/>
                     </svg>
-                  </div>
-                  
-                  {/* Profile placeholder with AI theme */}
-                  <div className="w-full h-full bg-gradient-to-br from-purple-400 to-cyan-400 opacity-20 flex items-center justify-center relative">
-                    <div className="text-6xl text-white font-bold">AI</div>
-                    
-                    {/* Animated data streams */}
-                    <div className="absolute inset-0">
-                      {[...Array(8)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="absolute w-1 h-8 bg-gradient-to-t from-transparent via-cyan-400 to-transparent opacity-60 animate-pulse"
-                          style={{
-                            left: `${10 + i * 10}%`,
-                            top: `${20 + (i % 2) * 40}%`,
-                            animationDelay: `${i * 0.3}s`,
-                            animationDuration: '2s'
-                          }}
-                        />
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>

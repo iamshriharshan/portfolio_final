@@ -19,7 +19,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: linear-gradient(to bottom, #1f2937, #111827);
   border-radius: 5px;
 }
 
@@ -138,6 +138,15 @@ html {
   }
 }
 
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Animation classes */
 .animate-slide-up {
   animation: slide-up 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -189,6 +198,11 @@ html {
 
 .animate-section-reveal {
   animation: section-reveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
 }
 
 /* 3D transforms and perspective */
@@ -432,4 +446,30 @@ textarea:focus {
   transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth gradient backgrounds */
+.bg-gradient-smooth {
+  background: linear-gradient(-45deg, #1f2937, #374151, #4b5563, #6b7280);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
