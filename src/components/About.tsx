@@ -1,14 +1,16 @@
 import React from 'react';
-import { Code, Palette, Zap, Users, Award, Target } from 'lucide-react';
+import { Code, Palette, Zap, Users, Award, Target, Brain, Shield } from 'lucide-react';
 
 const About: React.FC = () => {
   const skills = [
-    { icon: Code, title: 'Full Stack Development', desc: 'MERN, Next.js, TypeScript' },
-    { icon: Palette, title: 'UI/UX Design', desc: 'Figma, Adobe Creative Suite' },
-    { icon: Zap, title: 'Performance', desc: 'Optimization & Best Practices' },
-    { icon: Users, title: 'Team Leadership', desc: 'Agile & Project Management' },
+    { icon: Brain, title: 'AI Development (NLP)', desc: 'Natural Language Processing & Machine Learning' },
+    { icon: Users, title: 'Performance Team Leadership', desc: 'Agile & Project Management' },
+    { icon: Palette, title: 'Graphic Designing', desc: 'Visual Design & Creative Solutions' },
+    { icon: Code, title: 'Web Development', desc: 'Full Stack & Modern Frameworks' },
     { icon: Award, title: 'Quality Assurance', desc: 'Testing & Code Reviews' },
-    { icon: Target, title: 'Problem Solving', desc: 'Analytical & Creative Thinking' }
+    { icon: Shield, title: 'Cyber Security', desc: 'Security Research & Penetration Testing' },
+    { icon: Target, title: 'Problem Solving', desc: 'Analytical & Creative Thinking' },
+    { icon: Zap, title: 'Performance Optimization', desc: 'System Efficiency & Best Practices' }
   ];
 
   return (
@@ -32,29 +34,27 @@ const About: React.FC = () => {
           <div className="space-y-6">
             <div className="prose prose-lg text-gray-300">
               <p className="text-xl leading-relaxed">
-                I'm Harshan, a passionate AI-powered full-stack developer and security researcher 
-                currently pursuing my studies at the National Institute of Technology Karnataka (NITK). 
-                My journey in tech combines cutting-edge AI development with cybersecurity expertise, 
-                creating innovative solutions that make a real impact.
+                I'm Shri Harshan, a passionate 4th year student at the National Institute of Technology Karnataka (NITK), 
+                fully immersed in the world of Artificial Intelligence. My journey combines cutting-edge AI development 
+                with practical applications in NLP, cybersecurity, and modern web technologies.
               </p>
               
               <p className="text-lg leading-relaxed">
-                I specialize in modern web technologies, machine learning, and security research. 
-                From building intelligent search systems to conducting penetration testing, 
-                I love tackling complex challenges that push the boundaries of technology. 
-                When I'm not coding, you'll find me contributing to open source projects or 
-                hunting for security vulnerabilities.
+                I specialize in Natural Language Processing, team leadership, and creating intelligent solutions 
+                that bridge the gap between complex AI concepts and real-world applications. From building 
+                sophisticated NLP models to leading performance teams, I love tackling challenges that push 
+                the boundaries of what's possible with AI.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-8 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">15+</div>
-                <div className="text-gray-400">Projects Completed</div>
+                <div className="text-gray-400">AI Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">3+</div>
-                <div className="text-gray-400">Years Experience</div>
+                <div className="text-3xl font-bold text-white mb-2">4</div>
+                <div className="text-gray-400">Years at NITK</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">5+</div>
@@ -62,35 +62,35 @@ const About: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">∞</div>
-                <div className="text-gray-400">Coffee Cups</div>
+                <div className="text-gray-400">Learning Hours</div>
               </div>
             </div>
           </div>
 
           {/* 3D Card */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 transform hover:scale-[1.02] hover:-translate-y-2 transition-all duration-600 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-600"></div>
               
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-white mb-4">My Philosophy</h3>
                 <p className="text-gray-300 mb-6">
-                  "Technology should be secure, intelligent, and accessible. I believe in building 
-                  solutions that not only solve problems but also protect users and enhance their experience."
+                  "AI should be intelligent, accessible, and secure. I believe in building solutions that not only 
+                  solve complex problems but also empower users and enhance their capabilities through thoughtful design."
                 </p>
                 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-                    <span className="text-gray-300">Security-first development</span>
+                    <span className="text-gray-300">AI-first development approach</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-                    <span className="text-gray-300">AI-powered solutions</span>
+                    <span className="text-gray-300">Security-conscious solutions</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-                    <span className="text-gray-300">Open source contribution</span>
+                    <span className="text-gray-300">Continuous learning mindset</span>
                   </div>
                 </div>
               </div>
@@ -99,30 +99,30 @@ const About: React.FC = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 transform hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/20"
+                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 transform hover:scale-[1.02] hover:-translate-y-2 transition-all duration-600 hover:shadow-xl hover:shadow-purple-500/20"
                 style={{
                   animationDelay: `${index * 100}ms`
                 }}
               >
                 {/* Hover glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
                 
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-400">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
                     {skill.title}
                   </h3>
                   
-                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
                     {skill.desc}
                   </p>
                 </div>
