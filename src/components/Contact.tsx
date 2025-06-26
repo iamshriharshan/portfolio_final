@@ -25,7 +25,6 @@ const Contact: React.FC = () => {
     setSubmitStatus('idle');
     
     try {
-      // Using EmailJS or similar service to send emails
       const response = await fetch('https://formspree.io/f/xpwzgqpz', {
         method: 'POST',
         headers: {
@@ -82,7 +81,7 @@ const Contact: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/iamshriharshan', label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: MessageCircle, href: '#', label: 'Discord' }
@@ -113,8 +112,8 @@ const Contact: React.FC = () => {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Let's Start a Conversation</h3>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                Whether you have a project in mind, need technical consultation, or just want to say hello, 
-                I'm always excited to connect with fellow creators and innovators.
+                Whether you have a project in mind, need security consultation, or want to collaborate 
+                on innovative AI solutions, I'm always excited to connect with fellow creators and innovators.
               </p>
             </div>
 
@@ -152,6 +151,8 @@ const Contact: React.FC = () => {
                     <a
                       key={index}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="group w-12 h-12 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-110"
                       aria-label={social.label}
                     >

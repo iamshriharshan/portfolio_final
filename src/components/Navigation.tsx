@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, User, Briefcase, Clock, Mail } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, Clock, Mail, Trophy } from 'lucide-react';
 
 interface NavigationProps {
   activeSection: string;
@@ -23,6 +23,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
     { id: 'about', label: 'About', icon: User },
     { id: 'projects', label: 'Projects', icon: Briefcase },
     { id: 'experience', label: 'Experience', icon: Clock },
+    { id: 'achievements', label: 'Achievements', icon: Trophy },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
 
@@ -71,7 +72,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
               <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Portfolio
+                Harshan
               </div>
             </div>
             
@@ -123,7 +124,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
 
         {/* Mobile Navigation */}
         <div className={`md:hidden transition-all duration-500 ${
-          isOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden bg-gray-900/95 backdrop-blur-xl border-t border-white/10`}>
           <div className="px-4 py-2 space-y-1">
             {navItems.map((item, index) => {

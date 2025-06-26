@@ -15,8 +15,8 @@ const About: React.FC = () => {
     <section id="about" className="py-20 bg-gray-900 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,32 +32,33 @@ const About: React.FC = () => {
           <div className="space-y-6">
             <div className="prose prose-lg text-gray-300">
               <p className="text-xl leading-relaxed">
-                I'm a passionate full-stack developer with over 5 years of experience 
-                creating digital solutions that make a difference. My journey in tech 
-                started with a curiosity for how things work and evolved into a career 
-                dedicated to building exceptional user experiences.
+                I'm Harshan, a passionate AI-powered full-stack developer and security researcher 
+                currently pursuing my studies at the National Institute of Technology Karnataka (NITK). 
+                My journey in tech combines cutting-edge AI development with cybersecurity expertise, 
+                creating innovative solutions that make a real impact.
               </p>
               
               <p className="text-lg leading-relaxed">
-                I specialize in modern web technologies and love working on projects 
-                that challenge me to learn and grow. When I'm not coding, you'll find 
-                me exploring new technologies, contributing to open source, or sharing 
-                knowledge with the developer community.
+                I specialize in modern web technologies, machine learning, and security research. 
+                From building intelligent search systems to conducting penetration testing, 
+                I love tackling complex challenges that push the boundaries of technology. 
+                When I'm not coding, you'll find me contributing to open source projects or 
+                hunting for security vulnerabilities.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-8 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">50+</div>
+                <div className="text-3xl font-bold text-white mb-2">15+</div>
                 <div className="text-gray-400">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">5+</div>
+                <div className="text-3xl font-bold text-white mb-2">3+</div>
                 <div className="text-gray-400">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">20+</div>
-                <div className="text-gray-400">Happy Clients</div>
+                <div className="text-3xl font-bold text-white mb-2">5+</div>
+                <div className="text-gray-400">Security Bounties</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">∞</div>
@@ -74,22 +75,22 @@ const About: React.FC = () => {
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-white mb-4">My Philosophy</h3>
                 <p className="text-gray-300 mb-6">
-                  "Great software is not just about clean code—it's about solving real problems 
-                  and creating meaningful experiences that users love."
+                  "Technology should be secure, intelligent, and accessible. I believe in building 
+                  solutions that not only solve problems but also protect users and enhance their experience."
                 </p>
                 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-                    <span className="text-gray-300">User-first approach</span>
+                    <span className="text-gray-300">Security-first development</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-                    <span className="text-gray-300">Continuous learning</span>
+                    <span className="text-gray-300">AI-powered solutions</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-                    <span className="text-gray-300">Clean, maintainable code</span>
+                    <span className="text-gray-300">Open source contribution</span>
                   </div>
                 </div>
               </div>
