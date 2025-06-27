@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
     
     try {
       // Using Formspree for form handling
-      const response = await fetch('https://formspree.io/f/xpwzgqpz', {
+      const response = await fetch('https://formspree.io/f/mnnvlqkl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
