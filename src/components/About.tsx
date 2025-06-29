@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Code, Palette, Zap, Users, Award, Target, Brain, Shield } from 'lucide-react';
 
 const About: React.FC = () => {
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const skills = [
     { icon: Brain, title: 'AI Development (NLP)', desc: 'Natural Language Processing & Machine Learning' },
     { icon: Users, title: 'Performance Team Leadership', desc: 'Agile & Project Management' },
@@ -12,6 +15,35 @@ const About: React.FC = () => {
     { icon: Target, title: 'Problem Solving', desc: 'Analytical & Creative Thinking' },
     { icon: Zap, title: 'Performance Optimization', desc: 'System Efficiency & Best Practices' }
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = parseInt(entry.target.getAttribute('data-index') || '0');
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              setVisibleItems(prev => [...prev, index]);
+            }, index * 150);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '-50px 0px -50px 0px'
+      }
+    );
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      itemRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
 
   return (
     <section id="about" className="py-16 md:py-20 bg-gray-900 relative overflow-hidden">
@@ -100,17 +132,22 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Enhanced Skills Grid */}
+        {/* Enhanced Skills Grid with Smooth Pop-up Animation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
+            const isVisible = visibleItems.includes(index);
+            
             return (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-4 md:p-6 card-hover overflow-hidden"
-                style={{
-                  animationDelay: `${index * 100}ms`
-                }}
+                ref={el => itemRefs.current[index] = el}
+                data-index={index}
+                className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-4 md:p-6 card-hover overflow-hidden transition-all duration-[1500ms] ease-out ${
+                  isVisible 
+                    ? 'opacity-100 transform translate-y-0 scale-100' 
+                    : 'opacity-0 transform translate-y-8 scale-95'
+                }`}
               >
                 {/* Enhanced hover glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-600/8 to-cyan-600/8 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]"></div>

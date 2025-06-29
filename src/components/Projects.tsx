@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Github, Search, Terminal, Users, ExternalLink } from 'lucide-react';
 
 const Projects: React.FC = () => {
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const projects = [
     {
       title: 'Search in Video Extension',
@@ -32,6 +35,35 @@ const Projects: React.FC = () => {
     }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = parseInt(entry.target.getAttribute('data-index') || '0');
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              setVisibleItems(prev => [...prev, index]);
+            }, index * 200);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '-50px 0px -50px 0px'
+      }
+    );
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      itemRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <section id="projects" className="py-16 md:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
       {/* Enhanced background decorations */}
@@ -55,13 +87,18 @@ const Projects: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => {
             const Icon = project.icon;
+            const isVisible = visibleItems.includes(index);
+            
             return (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl overflow-hidden card-hover"
-                style={{
-                  animationDelay: `${index * 100}ms`
-                }}
+                ref={el => itemRefs.current[index] = el}
+                data-index={index}
+                className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl overflow-hidden card-hover transition-all duration-[1500ms] ease-out ${
+                  isVisible 
+                    ? 'opacity-100 transform translate-y-0 scale-100' 
+                    : 'opacity-0 transform translate-y-12 scale-95'
+                }`}
               >
                 {/* Enhanced project image */}
                 <div className="relative h-40 md:h-48 overflow-hidden">
@@ -86,11 +123,11 @@ const Projects: React.FC = () => {
 
                 {/* Enhanced project content */}
                 <div className="p-4 md:p-6">
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-all duration-[1200ms] cursor-default">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-200 transition-all duration-[1200ms] cursor-default mb-4">
+                  <p className="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-all duration-[1200ms] cursor-default mb-4">
                     {project.description}
                   </p>
 
