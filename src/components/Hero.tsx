@@ -118,9 +118,9 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
-        <div className="w-full">
-          {/* Premium Content - Centered Layout */}
-          <div className="text-center mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+          {/* Premium Content - Left Side */}
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <div className="space-y-4">
               <div className="overflow-hidden">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white animate-slide-up hover:scale-105 transition-all duration-[1200ms] cursor-default">
@@ -135,12 +135,12 @@ const Hero: React.FC = () => {
                   <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light hover:text-gray-100 transition-all duration-[1200ms] cursor-default">
                     AI Developer & Full Stack Engineer
                   </h2>
-                  <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 mx-auto hover:w-28 hover:h-1.5 transition-all duration-[1200ms]"></div>
+                  <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 mx-auto lg:mx-0 hover:w-28 hover:h-1.5 transition-all duration-[1200ms]"></div>
                 </div>
               </div>
               
               <div className="overflow-hidden">
-                <p className="text-base md:text-lg text-gray-400 max-w-2xl leading-relaxed animate-slide-up-delay-2 mx-auto hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
+                <p className="text-base md:text-lg text-gray-400 max-w-lg leading-relaxed animate-slide-up-delay-2 mx-auto lg:mx-0 hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
                   4th year student at NITK, passionate about AI and building intelligent solutions. 
                   Specializing in NLP, cybersecurity, and modern web technologies.
                 </p>
@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Premium CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up-delay-3 justify-center mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up-delay-3 justify-center lg:justify-start">
               <button 
                 onClick={scrollToProjects}
                 className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-xl btn-3d overflow-hidden"
@@ -168,7 +168,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Premium Social Links */}
-            <div className="flex space-x-4 md:space-x-6 animate-slide-up-delay-4 justify-center mt-6">
+            <div className="flex space-x-4 md:space-x-6 animate-slide-up-delay-4 justify-center lg:justify-start">
               {[
                 { icon: Github, href: 'https://github.com/iamshriharshan', label: 'GitHub' },
                 { icon: Linkedin, href: 'https://www.linkedin.com/in/shri-harshan/', label: 'LinkedIn' },
@@ -192,8 +192,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Premium Profile Image with Tech Bubbles - Centered */}
-          <div className="flex justify-center">
+          {/* Premium Profile Image with Tech Bubbles - Right Side */}
+          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div 
               className="relative transform transition-all duration-[1500ms] ease-out hover:scale-105"
               style={{
@@ -236,7 +236,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               
-              {/* Premium floating Tech Bubbles - Positioned around center */}
+              {/* Premium floating Tech Bubbles - Positioned around image */}
               {/* AI - Top */}
               <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-purple-500/30 border border-purple-400/20">
                 <span className="text-white font-bold text-sm">AI</span>
@@ -262,7 +262,7 @@ const Hero: React.FC = () => {
                 <span className="text-white font-bold text-xs">NLP</span>
               </div>
               
-              {/* Additional tech bubble - Left */}
+              {/* 3D - Left */}
               <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-pink-500/30 border border-pink-400/20" style={{animationDelay: '2.5s'}}>
                 <span className="text-white font-bold text-xs">3D</span>
               </div>
