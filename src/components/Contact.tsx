@@ -98,20 +98,20 @@ const Contact: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 card-hover cursor-default">
-            Get In <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 transition-all duration-[1500ms]">Touch</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 hover:scale-105 transition-all duration-[1200ms] cursor-default">
+            Get In <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 transition-all duration-[1200ms]">Touch</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
             Ready to bring your ideas to life? Let's discuss your next project and create something extraordinary together.
           </p>
-          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 animate-pulse hover:w-32 hover:h-2 transition-all duration-[1500ms]"></div>
+          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 hover:w-32 hover:h-2 transition-all duration-[1200ms]"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Enhanced Contact Information */}
           <div className="space-y-6 md:space-y-8">
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 hover:text-purple-300 transition-all duration-[1200ms] cursor-default">Let's Start a Conversation</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">Let's Start a Conversation</h3>
               <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
                 Whether you have a project in mind, need security consultation, or want to collaborate 
                 on innovative AI solutions, I'm always excited to connect with fellow creators and innovators.
@@ -128,16 +128,16 @@ const Contact: React.FC = () => {
                     href={info.href}
                     className="group flex items-center space-x-4 p-4 md:p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl card-hover overflow-hidden"
                   >
-                    <div className="w-12 md:w-14 h-12 md:h-14 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-[1400ms]">
+                    <div className="w-12 md:w-14 h-12 md:h-14 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-[1200ms]">
                       <Icon className="w-6 md:w-7 h-6 md:h-7 text-white group-hover:scale-110 transition-all duration-[1200ms]" />
                     </div>
                     <div>
                       <div className="text-sm text-gray-400 group-hover:text-gray-200 transition-all duration-[1200ms]">{info.label}</div>
-                      <div className="text-white font-medium group-hover:text-purple-300 transition-all duration-[1200ms] text-sm md:text-base">
+                      <div className="text-white font-medium group-hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] text-sm md:text-base">
                         {info.value}
                       </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms] rounded-xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] rounded-xl"></div>
                   </a>
                 );
               })}
@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
 
             {/* Enhanced Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4 hover:text-purple-300 transition-all duration-[1200ms] cursor-default">Connect With Me</h4>
+              <h4 className="text-lg font-semibold text-white mb-4 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">Connect With Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
                       aria-label={social.label}
                     >
                       <Icon className="w-5 md:w-6 h-5 md:h-6 icon-hover relative z-10" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms] rounded-xl"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] rounded-xl"></div>
                     </a>
                   );
                 })}
@@ -171,18 +171,18 @@ const Contact: React.FC = () => {
           <div className="relative">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 md:p-8 card-hover overflow-hidden">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-6 hover:text-purple-300 transition-all duration-[1200ms] cursor-default">Send Me a Message</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-6 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">Send Me a Message</h3>
                 
                 {/* Enhanced Success/Error Messages */}
                 {submitStatus === 'success' && (
-                  <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center space-x-3 animate-slide-up card-hover">
+                  <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center space-x-3 card-hover">
                     <CheckCircle className="w-5 h-5 text-green-400" />
                     <span className="text-green-300">Message sent successfully! I'll get back to you soon.</span>
                   </div>
                 )}
                 
                 {submitStatus === 'error' && (
-                  <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center space-x-3 animate-slide-up card-hover">
+                  <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center space-x-3 card-hover">
                     <AlertCircle className="w-5 h-5 text-red-400" />
                     <span className="text-red-300">Failed to send message. Please try again or contact me directly.</span>
                   </div>
@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1400ms]"
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1200ms]"
                       placeholder="Your Name"
                     />
                   </div>
@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1400ms]"
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1200ms]"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -233,7 +233,7 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1400ms]"
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1200ms]"
                     placeholder="Let's work together!"
                   />
                 </div>
@@ -249,7 +249,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1400ms] resize-none"
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-[1200ms] resize-none"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -272,10 +272,10 @@ const Contact: React.FC = () => {
                       </>
                     )}
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-cyan-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-cyan-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]"></div>
                 </button>
                 
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 opacity-0 hover:opacity-100 transition-opacity duration-[1500ms] rounded-2xl pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 opacity-0 hover:opacity-100 transition-opacity duration-[1200ms] rounded-2xl pointer-events-none"></div>
               </div>
             </form>
           </div>

@@ -80,13 +80,13 @@ const Experience: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 card-hover cursor-default">
-            My <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 transition-all duration-[1500ms]">Journey</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 hover:scale-105 transition-all duration-[1200ms] cursor-default">
+            My <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 transition-all duration-[1200ms]">Journey</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
             A timeline of my professional growth in AI, security research, and technology innovation.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 animate-pulse hover:w-32 hover:h-2 transition-all duration-[1500ms]"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 hover:w-32 hover:h-2 transition-all duration-[1200ms]"></div>
         </div>
 
         <div className="relative">
@@ -108,7 +108,7 @@ const Experience: React.FC = () => {
                   <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 z-20">
                     <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center card-hover ${
                       exp.current 
-                        ? 'bg-gradient-to-r from-purple-600 to-cyan-600 border-white shadow-xl shadow-purple-500/50 animate-pulse' 
+                        ? 'bg-gradient-to-r from-purple-600 to-cyan-600 border-white shadow-xl shadow-purple-500/50' 
                         : 'bg-gray-800 border-gray-600 hover:border-purple-500 hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-cyan-600/20'
                     }`}>
                       <Icon className="w-6 h-6 text-white icon-hover" />
@@ -121,50 +121,50 @@ const Experience: React.FC = () => {
                   }`}>
                     <div className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 card-hover overflow-hidden">
                       {/* Enhanced hover glow */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/8 to-cyan-600/8 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms]"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/8 to-cyan-600/8 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]"></div>
                       
                       <div className="relative z-10">
                         {/* Enhanced Header */}
                         <div className="mb-6">
-                          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-all duration-[1200ms] cursor-default">
+                          <h3 className="text-2xl font-bold text-white mb-3 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">
                             {exp.title}
                           </h3>
                           
                           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-400 mb-3">
-                            <div className="font-semibold text-gray-300 text-lg group-hover:text-cyan-300 transition-all duration-[1200ms] cursor-default">{exp.company}</div>
+                            <div className="font-semibold text-gray-300 text-lg hover:text-cyan-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">{exp.company}</div>
                             {exp.current && (
-                              <span className="bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-xs px-3 py-1 rounded-full w-fit animate-pulse hover:scale-110 transition-all duration-[1200ms] cursor-pointer">
+                              <span className="bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-xs px-3 py-1 rounded-full w-fit hover:scale-110 transition-all duration-[1200ms] cursor-pointer">
                                 Current Position
                               </span>
                             )}
                           </div>
                           
                           <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400">
-                            <div className="flex items-center space-x-2 group-hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
-                              <Calendar className="w-4 h-4 group-hover:scale-110 transition-all duration-[1200ms]" />
+                            <div className="flex items-center space-x-2 hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
+                              <Calendar className="w-4 h-4 hover:scale-110 transition-all duration-[1200ms]" />
                               <span>{exp.period}</span>
                             </div>
-                            <div className="flex items-center space-x-2 group-hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
-                              <MapPin className="w-4 h-4 group-hover:scale-110 transition-all duration-[1200ms]" />
+                            <div className="flex items-center space-x-2 hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
+                              <MapPin className="w-4 h-4 hover:scale-110 transition-all duration-[1200ms]" />
                               <span>{exp.location}</span>
                             </div>
                           </div>
                         </div>
 
                         {/* Enhanced Description */}
-                        <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-100 transition-all duration-[1200ms] cursor-default">
+                        <p className="text-gray-300 mb-6 leading-relaxed hover:text-gray-100 transition-all duration-[1200ms] cursor-default">
                           {exp.description}
                         </p>
 
                         {/* Enhanced Achievements */}
                         <div className="mb-6">
-                          <h4 className="text-sm font-semibold text-gray-300 mb-3 flex items-center space-x-2 group-hover:text-purple-300 transition-all duration-[1200ms] cursor-default">
+                          <h4 className="text-sm font-semibold text-gray-300 mb-3 flex items-center space-x-2 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">
                             <Award className="w-4 h-4" />
                             <span>Key Achievements:</span>
                           </h4>
                           <ul className="space-y-2">
                             {exp.achievements.map((achievement, achIndex) => (
-                              <li key={achIndex} className="flex items-start space-x-3 text-sm text-gray-400 group-hover:text-gray-200 transition-all duration-[1200ms] hover:translate-x-2 transition-transform duration-[1200ms] cursor-default">
+                              <li key={achIndex} className="flex items-start space-x-3 text-sm text-gray-400 hover:text-gray-200 transition-all duration-[1200ms] hover:translate-x-2 transition-transform duration-[1200ms] cursor-default">
                                 <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0 hover:scale-150 transition-all duration-[1200ms]"></div>
                                 <span>{achievement}</span>
                               </li>
@@ -205,7 +205,7 @@ const Experience: React.FC = () => {
               <span>Get In Touch</span>
               <TrendingUp className="w-5 h-5 icon-hover" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-cyan-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms]"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-cyan-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]"></div>
           </button>
         </div>
       </div>
