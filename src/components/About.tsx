@@ -49,21 +49,21 @@ const About: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-6 md:gap-8 pt-6 md:pt-8">
-              <div className="text-center group card-hover cursor-pointer">
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-purple-400 transition-all duration-[1200ms]">5+</div>
-                <div className="text-gray-400 group-hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base">Projects Completed</div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2 hover:text-purple-400 hover:scale-110 transition-all duration-[1200ms] cursor-default">5+</div>
+                <div className="text-gray-400 hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base cursor-default">Projects Completed</div>
               </div>
-              <div className="text-center group card-hover cursor-pointer">
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-all duration-[1200ms]">4</div>
-                <div className="text-gray-400 group-hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base">Years at NITK</div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2 hover:text-cyan-400 hover:scale-110 transition-all duration-[1200ms] cursor-default">4</div>
+                <div className="text-gray-400 hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base cursor-default">Years at NITK</div>
               </div>
-              <div className="text-center group card-hover cursor-pointer">
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-pink-400 transition-all duration-[1200ms]">5+</div>
-                <div className="text-gray-400 group-hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base">Security Bounties</div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2 hover:text-pink-400 hover:scale-110 transition-all duration-[1200ms] cursor-default">5+</div>
+                <div className="text-gray-400 hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base cursor-default">Security Bounties</div>
               </div>
-              <div className="text-center group card-hover cursor-pointer">
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-all duration-[1200ms]">∞</div>
-                <div className="text-gray-400 group-hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base">Learning Hours</div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2 hover:text-emerald-400 hover:scale-110 transition-all duration-[1200ms] cursor-default">∞</div>
+                <div className="text-gray-400 hover:text-gray-200 transition-all duration-[1200ms] text-sm md:text-base cursor-default">Learning Hours</div>
               </div>
             </div>
           </div>
