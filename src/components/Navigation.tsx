@@ -69,26 +69,38 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
-            {/* Simple SH Logo - Same Font Style, No Overlap */}
+            {/* Perfect SH Logo - Same Modulation for Both Letters */}
             <div className="flex-shrink-0">
               <div className="relative group cursor-pointer">
                 {/* Main Logo Container */}
                 <div className="flex items-center space-x-1">
-                  {/* S Letter */}
+                  {/* S Letter - Same Modulation as H */}
                   <div className="relative w-8 md:w-10 h-12 md:h-14">
                     <div className="relative w-full h-full">
-                      {/* S - Top Curve */}
-                      <div className="absolute top-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-purple-500 to-purple-600 rounded-t-xl rounded-br-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      {/* S Left Vertical (Top Half) */}
+                      <div className="absolute left-0 top-0 w-2.5 md:w-3 h-5 md:h-6 bg-gradient-to-b from-purple-500 to-purple-600 rounded-tl-xl rounded-bl-sm transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                       
-                      {/* S - Middle Bar */}
-                      <div className="absolute top-4 md:top-5 left-0 w-3/4 h-3 md:h-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-r-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      {/* S Top Horizontal */}
+                      <div className="absolute top-0 left-0 w-full h-2.5 md:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                       
-                      {/* S - Bottom Curve */}
-                      <div className="absolute bottom-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-b-xl rounded-tr-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      {/* S Right Vertical (Top Half) */}
+                      <div className="absolute right-0 top-0 w-2.5 md:w-3 h-5 md:h-6 bg-gradient-to-b from-pink-500 to-pink-600 rounded-tr-xl rounded-br-sm transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* S Middle Horizontal */}
+                      <div className="absolute top-4 md:top-5 left-0 w-full h-2.5 md:h-3 bg-gradient-to-r from-pink-600 to-cyan-500 rounded transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* S Left Vertical (Bottom Half) */}
+                      <div className="absolute left-0 bottom-0 w-2.5 md:w-3 h-5 md:h-6 bg-gradient-to-b from-cyan-500 to-cyan-600 rounded-tl-sm rounded-bl-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* S Bottom Horizontal */}
+                      <div className="absolute bottom-0 left-0 w-full h-2.5 md:h-3 bg-gradient-to-r from-cyan-600 to-blue-500 rounded-b-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* S Right Vertical (Bottom Half) */}
+                      <div className="absolute right-0 bottom-0 w-2.5 md:w-3 h-5 md:h-6 bg-gradient-to-b from-blue-500 to-blue-600 rounded-tr-sm rounded-br-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                     </div>
                   </div>
 
-                  {/* H Letter */}
+                  {/* H Letter - Same as Before */}
                   <div className="relative w-8 md:w-10 h-12 md:h-14">
                     <div className="relative w-full h-full">
                       {/* H Left Vertical */}
@@ -98,7 +110,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
                       <div className="absolute right-0 top-0 w-2.5 md:w-3 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                       
                       {/* H Middle Bar */}
-                      <div className="absolute top-4 md:top-5 left-2.5 md:left-3 right-2.5 md:right-3 h-3 md:h-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      <div className="absolute top-4 md:top-5 left-2.5 md:left-3 right-2.5 md:right-3 h-2.5 md:h-3 bg-gradient-to-r from-blue-600 to-cyan-500 rounded transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                     </div>
                   </div>
                 </div>
