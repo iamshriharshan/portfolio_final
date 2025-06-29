@@ -69,36 +69,57 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
-            {/* Premium Stylish SH Logo - Letters Only */}
+            {/* Interlocked SH Logo - Inspired by Reference */}
             <div className="flex-shrink-0">
               <div className="relative group cursor-pointer">
-                {/* Main SH Letters */}
-                <div className="relative">
-                  <span className="text-3xl md:text-4xl font-black tracking-tighter bg-gradient-to-br from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:via-pink-300 hover:to-cyan-300 transition-all duration-[1200ms] transform hover:scale-110 hover:-rotate-2 inline-block">
-                    S
-                  </span>
-                  <span className="text-3xl md:text-4xl font-black tracking-tighter bg-gradient-to-br from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-cyan-300 hover:via-blue-300 hover:to-purple-300 transition-all duration-[1200ms] transform hover:scale-110 hover:rotate-2 inline-block ml-1">
-                    H
-                  </span>
+                {/* Main Interlocked SH Design */}
+                <div className="relative w-16 h-12 md:w-20 md:h-14">
+                  {/* S Letter - Left Side */}
+                  <div className="absolute left-0 top-0 w-8 md:w-10 h-12 md:h-14 overflow-hidden">
+                    <div className="relative w-full h-full">
+                      {/* S Top Curve */}
+                      <div className="absolute top-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-purple-500 to-purple-600 rounded-t-lg rounded-br-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* S Middle Bar */}
+                      <div className="absolute top-4 md:top-5 left-0 w-3/4 h-3 md:h-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-r-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* S Bottom Curve */}
+                      <div className="absolute bottom-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-b-lg rounded-tr-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                    </div>
+                  </div>
+
+                  {/* H Letter - Right Side (Interlocked) */}
+                  <div className="absolute right-0 top-0 w-8 md:w-10 h-12 md:h-14 overflow-hidden">
+                    <div className="relative w-full h-full">
+                      {/* H Left Vertical */}
+                      <div className="absolute left-0 top-0 w-2.5 md:w-3 h-full bg-gradient-to-b from-cyan-500 to-blue-500 rounded-l-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* H Right Vertical */}
+                      <div className="absolute right-0 top-0 w-2.5 md:w-3 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      
+                      {/* H Middle Bar (Interlocking with S) */}
+                      <div className="absolute top-4 md:top-5 right-0 w-3/4 h-3 md:h-4 bg-gradient-to-l from-blue-600 to-cyan-500 rounded-l-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                    </div>
+                  </div>
+
+                  {/* Interlocking Connection */}
+                  <div className="absolute top-4 md:top-5 left-6 md:left-7 w-4 md:w-6 h-3 md:h-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded transform group-hover:scale-125 transition-all duration-[1200ms] z-10"></div>
+
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-cyan-500/30 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] -z-10 scale-150"></div>
                   
-                  {/* Stylish underline accent */}
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1200ms] origin-left"></div>
-                  
-                  {/* Floating dots around letters */}
-                  <div className="absolute -inset-3 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]">
+                  {/* Floating Particles */}
+                  <div className="absolute -inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]">
                     <div className="absolute top-0 left-2 w-1 h-1 bg-purple-400 rounded-full animate-gentle-bounce"></div>
                     <div className="absolute top-1 right-2 w-1 h-1 bg-cyan-400 rounded-full animate-gentle-bounce" style={{animationDelay: '0.3s'}}></div>
                     <div className="absolute bottom-1 left-4 w-1 h-1 bg-pink-400 rounded-full animate-gentle-bounce" style={{animationDelay: '0.6s'}}></div>
-                    <div className="absolute bottom-0 right-4 w-1 h-1 bg-indigo-400 rounded-full animate-gentle-bounce" style={{animationDelay: '0.9s'}}></div>
+                    <div className="absolute bottom-0 right-4 w-1 h-1 bg-blue-400 rounded-full animate-gentle-bounce" style={{animationDelay: '0.9s'}}></div>
                   </div>
-                  
-                  {/* Glow effect behind letters */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] -z-10 scale-150"></div>
                 </div>
                 
-                {/* Subtle tagline */}
+                {/* Subtle Brand Text */}
                 <div className="absolute -bottom-6 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]">
-                  <span className="text-xs text-gray-400 font-medium tracking-wider">DEVELOPER</span>
+                  <span className="text-xs text-gray-400 font-medium tracking-wider">HARSHAN</span>
                 </div>
               </div>
             </div>
