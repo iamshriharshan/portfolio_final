@@ -4,9 +4,15 @@ interface SectionTransitionProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
+  delay?: number;
 }
 
-const SectionTransition: React.FC<SectionTransitionProps> = ({ children, className = '', id }) => {
+const SectionTransition: React.FC<SectionTransitionProps> = ({ 
+  children, 
+  className = '', 
+  id, 
+  delay = 0 
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -15,13 +21,15 @@ const SectionTransition: React.FC<SectionTransitionProps> = ({ children, classNa
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
-          setIsVisible(true);
-          setHasAnimated(true);
+          setTimeout(() => {
+            setIsVisible(true);
+            setHasAnimated(true);
+          }, delay);
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: '-50px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '-80px 0px -80px 0px'
       }
     );
 
@@ -34,17 +42,20 @@ const SectionTransition: React.FC<SectionTransitionProps> = ({ children, classNa
         observer.unobserve(sectionRef.current);
       }
     };
-  }, [hasAnimated]);
+  }, [hasAnimated, delay]);
 
   return (
     <div
       ref={sectionRef}
       id={id}
-      className={`transition-all duration-1000 ease-out ${
+      className={`transition-all duration-[2000ms] ease-out transform ${
         isVisible 
-          ? 'opacity-100 transform translate-y-0' 
-          : 'opacity-0 transform translate-y-12'
+          ? 'opacity-100 translate-y-0 scale-100' 
+          : 'opacity-0 translate-y-16 scale-95'
       } ${className}`}
+      style={{
+        transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+      }}
     >
       {children}
     </div>

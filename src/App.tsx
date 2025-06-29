@@ -48,27 +48,27 @@ function App() {
       <ScrollBricks />
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
       
-      <SectionTransition id="home">
+      <SectionTransition id="home" delay={0}>
         <Hero />
       </SectionTransition>
       
-      <SectionTransition id="about">
+      <SectionTransition id="about" delay={200}>
         <About />
       </SectionTransition>
       
-      <SectionTransition id="projects">
+      <SectionTransition id="projects" delay={400}>
         <Projects />
       </SectionTransition>
       
-      <SectionTransition id="experience">
+      <SectionTransition id="experience" delay={600}>
         <Experience />
       </SectionTransition>
       
-      <SectionTransition id="achievements">
+      <SectionTransition id="achievements" delay={800}>
         <Achievements />
       </SectionTransition>
       
-      <SectionTransition id="contact">
+      <SectionTransition id="contact" delay={1000}>
         <Contact />
       </SectionTransition>
       

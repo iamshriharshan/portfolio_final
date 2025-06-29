@@ -129,11 +129,11 @@ html {
 @keyframes breathe {
   0%, 100% {
     transform: scale(1) rotate(0deg);
-    opacity: 0.6;
+    opacity: 0.4;
   }
   50% {
-    transform: scale(1.1) rotate(180deg);
-    opacity: 0.8;
+    transform: scale(1.15) rotate(180deg);
+    opacity: 0.7;
   }
 }
 
@@ -145,7 +145,7 @@ html {
     transform: translateY(-2px) scale(1.02);
   }
   100% {
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-6px) scale(1.08);
   }
 }
 
@@ -155,8 +155,8 @@ html {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   100% {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.25);
   }
 }
 
@@ -165,7 +165,22 @@ html {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes ultra-smooth-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -226,18 +241,22 @@ html {
 }
 
 .animate-breathe {
-  animation: breathe 8s ease-in-out infinite;
+  animation: breathe 10s ease-in-out infinite;
 }
 
 .animate-gentle-bounce {
-  animation: gentle-bounce 3s ease-in-out infinite;
+  animation: gentle-bounce 4s ease-in-out infinite;
+}
+
+.animate-ultra-smooth-pop {
+  animation: ultra-smooth-pop 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ULTRA SMOOTH TRANSITIONS - Applied to ALL interactive elements */
 *,
 *::before,
 *::after {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Enhanced smooth transitions for ALL interactive elements */
@@ -257,15 +276,17 @@ select,
 div[class*="hover:"],
 div[class*="group"],
 span[class*="hover:"],
-img[class*="hover:"] {
-  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+img[class*="hover:"],
+h1, h2, h3, h4, h5, h6,
+p, span, div {
+  transition: all 1.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity, box-shadow, background-color, border-color, filter;
   transform-origin: center;
 }
 
 /* ULTRA SMOOTH Button hover effects */
 button {
-  transition: all 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
   position: relative;
   overflow: hidden;
@@ -273,38 +294,38 @@ button {
 
 button:hover,
 .btn:hover {
-  animation: magnetic-pull 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1);
-  filter: brightness(1.1) saturate(1.1);
+  animation: magnetic-pull 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3), 0 8px 20px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.15) saturate(1.15);
 }
 
 button:active,
 .btn:active {
-  transform: translateY(-2px) scale(1.02);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(-3px) scale(1.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ULTRA SMOOTH Card hover effects */
 .card-hover,
 div[class*="bg-gradient-to-br"],
 div[class*="backdrop-blur"] {
-  transition: all 1.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
   position: relative;
 }
 
 .card-hover:hover {
-  animation: smooth-lift 1.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  filter: brightness(1.05) saturate(1.1);
+  animation: smooth-lift 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  filter: brightness(1.08) saturate(1.12);
 }
 
 .card-hover::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.08));
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: inherit;
   pointer-events: none;
 }
@@ -315,19 +336,19 @@ div[class*="backdrop-blur"] {
 
 /* ULTRA SMOOTH Link hover effects */
 a {
-  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
 a:hover {
-  transform: translateY(-3px) scale(1.02);
-  filter: brightness(1.1);
+  transform: translateY(-4px) scale(1.03);
+  filter: brightness(1.12);
 }
 
 /* ULTRA SMOOTH 3D button effects */
 .btn-3d {
   transform-style: preserve-3d;
-  transition: all 1.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   perspective: 1000px;
@@ -340,8 +361,8 @@ a:hover {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 2s cubic-bezier(0.23, 1, 0.32, 1);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 2.4s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
 }
 
@@ -350,43 +371,43 @@ a:hover {
 }
 
 .btn-3d:hover {
-  transform: translateY(-6px) rotateX(-3deg) scale(1.08);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
-  filter: brightness(1.15) saturate(1.2);
+  transform: translateY(-8px) rotateX(-4deg) scale(1.1);
+  box-shadow: 0 25px 50px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.25);
+  filter: brightness(1.2) saturate(1.25);
 }
 
 .btn-3d:active {
-  transform: translateY(-3px) rotateX(-1deg) scale(1.04);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(-4px) rotateX(-2deg) scale(1.05);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ULTRA SMOOTH Input hover and focus effects */
 input,
 textarea {
-  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.6s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
 }
 
 input:hover,
 textarea:hover {
-  border-color: rgba(156, 163, 175, 0.8);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
-  filter: brightness(1.05);
+  border-color: rgba(156, 163, 175, 0.9);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.12);
+  filter: brightness(1.08);
 }
 
 input:focus,
 textarea:focus {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
-  filter: brightness(1.1);
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.25);
+  filter: brightness(1.15);
 }
 
 /* ULTRA SMOOTH Navigation hover effects */
 .nav-button {
   transform-style: preserve-3d;
   perspective: 1000px;
-  transition: all 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
@@ -394,17 +415,17 @@ textarea:focus {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.08));
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: inherit;
   pointer-events: none;
 }
 
 .nav-button:hover {
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 12px 25px rgba(139, 92, 246, 0.25);
-  filter: brightness(1.1);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
+  filter: brightness(1.12);
 }
 
 .nav-button:hover::after {
@@ -414,102 +435,102 @@ textarea:focus {
 /* ULTRA SMOOTH Icon hover effects */
 .icon-hover,
 svg {
-  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
 }
 
 .icon-hover:hover,
 svg:hover {
-  transform: scale(1.3) rotate(15deg);
-  filter: brightness(1.2) drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+  transform: scale(1.4) rotate(18deg);
+  filter: brightness(1.25) drop-shadow(0 0 15px rgba(139, 92, 246, 0.6));
 }
 
 /* ULTRA SMOOTH Group hover effects */
 .group {
-  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:scale-110 {
   transform: scale(1.1);
-  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:scale-125 {
   transform: scale(1.25);
-  transition: transform 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:translate-x-1 {
   transform: translateX(0.25rem);
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:translate-x-2 {
   transform: translateX(0.5rem);
-  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:translate-y-1 {
   transform: translateY(0.25rem);
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:-translate-y-1 {
   transform: translateY(-0.25rem);
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:-translate-y-2 {
   transform: translateY(-0.5rem);
-  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:rotate-12 {
   transform: rotate(12deg);
-  transition: transform 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .group-hover\:rotate-45 {
   transform: rotate(45deg);
-  transition: transform 1.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ULTRA SMOOTH Color transitions */
 .color-transition,
 * {
-  transition: color 1s cubic-bezier(0.23, 1, 0.32, 1),
-              background-color 1s cubic-bezier(0.23, 1, 0.32, 1),
-              border-color 1s cubic-bezier(0.23, 1, 0.32, 1),
-              opacity 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: color 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Enhanced hover states for specific elements */
 img {
-  transition: all 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1) saturate(1.1);
+  transform: scale(1.08);
+  filter: brightness(1.15) saturate(1.15);
 }
 
 /* Mobile-specific enhancements */
 @media (max-width: 768px) {
   /* Maintain smooth transitions but reduce intensity on mobile */
   .card-hover:hover {
-    transform: translateY(-4px) scale(1.02);
-    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(-6px) scale(1.03);
+    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .btn-3d:hover {
-    transform: translateY(-3px) scale(1.04);
-    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(-4px) scale(1.05);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   button:hover,
   .btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(-3px) scale(1.03);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   /* Enhanced touch targets */
@@ -524,7 +545,7 @@ img:hover {
   /* Improved mobile navigation */
   .nav-button {
     padding: 12px 16px;
-    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   /* Better mobile card spacing */
@@ -583,7 +604,7 @@ img:hover {
   }
 }
 
-/* Enhanced mobile scrolling */
+/* Enhanced mobile scrolling with smooth section transitions */
 @media (max-width: 768px) {
   html {
     -webkit-overflow-scrolling: touch;
@@ -614,14 +635,14 @@ img:hover {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass:hover {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-3px) scale(1.03);
 }
 
 /* Enhanced glass effect */
@@ -630,15 +651,15 @@ img:hover {
   backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 1.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-enhanced:hover {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(25px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
-  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  transform: translateY(-5px) scale(1.04);
 }
 
 /* Performance optimizations */
@@ -664,7 +685,7 @@ img:hover {
   outline: 2px solid #8b5cf6;
   outline-offset: 2px;
   border-radius: 8px;
-  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Smooth gradient backgrounds */
@@ -679,13 +700,13 @@ img:hover {
   button:active,
   a:active,
   .interactive:active {
-    transform: scale(0.98);
-    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: scale(0.97);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .card-hover:active {
-    transform: scale(0.99);
-    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: scale(0.98);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
@@ -733,7 +754,7 @@ img:hover {
 
 /* Ultra smooth hover for all Tailwind hover classes */
 [class*="hover:"]:hover {
-  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  transition: all 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Smooth transitions for all transform utilities */
@@ -741,5 +762,27 @@ img:hover {
 [class*="scale-"],
 [class*="rotate-"],
 [class*="translate-"] {
-  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* Enhanced scroll-triggered animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered animation delays for multiple elements */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+.stagger-7 { transition-delay: 0.7s; }
+.stagger-8 { transition-delay: 0.8s; }
