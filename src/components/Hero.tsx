@@ -271,12 +271,9 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Premium scroll indicator */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-gentle-bounce cursor-pointer card-hover" onClick={scrollToAbout}>
-        <div className="relative p-2 bg-gray-800/30 rounded-xl backdrop-blur-sm border border-gray-600/30">
-          <ChevronDown className="w-6 md:w-8 h-6 md:h-8 text-gray-400 hover:text-white transition-all duration-[1200ms]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl opacity-0 hover:opacity-20 transition-opacity duration-[1200ms] blur-sm"></div>
-        </div>
+      {/* Simple Premium Scroll Indicator - Just Arrow */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-gentle-bounce cursor-pointer" onClick={scrollToAbout}>
+        <ChevronDown className="w-8 h-8 text-gray-400 hover:text-white hover:scale-125 transition-all duration-[1200ms]" />
       </div>
     </section>
   );

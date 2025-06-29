@@ -24,10 +24,11 @@ const About: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 card-hover cursor-default">
-            About <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 transition-all duration-[1500ms]">Me</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 cursor-default">
+            <span className="hover:scale-110 transition-all duration-[1200ms] inline-block">About</span>{' '}
+            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 hover:scale-110 transition-all duration-[1200ms] inline-block">Me</span>
           </h2>
-          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full animate-pulse hover:w-32 hover:h-2 transition-all duration-[1500ms]"></div>
+          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full hover:w-32 hover:h-2 transition-all duration-[1200ms]"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 md:mb-20">
@@ -71,10 +72,10 @@ const About: React.FC = () => {
           {/* Enhanced 3D Card */}
           <div className="relative order-1 lg:order-2">
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 md:p-8 card-hover relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-[1500ms]"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-[1200ms]"></div>
               
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 hover:text-purple-300 transition-all duration-[1200ms] cursor-default">My Philosophy</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">My Philosophy</h3>
                 <p className="text-gray-300 mb-6 hover:text-gray-100 transition-all duration-[1200ms] cursor-default text-sm md:text-base leading-relaxed">
                   "AI should be intelligent, accessible, and secure. I believe in building solutions that not only 
                   solve complex problems but also empower users and enhance their capabilities through thoughtful design."
@@ -112,18 +113,18 @@ const About: React.FC = () => {
                 }}
               >
                 {/* Enhanced hover glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/8 to-cyan-600/8 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/8 to-cyan-600/8 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]"></div>
                 
                 <div className="relative z-10">
-                  <div className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-[1400ms]">
+                  <div className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-[1200ms]">
                     <Icon className="w-5 md:w-6 h-5 md:h-6 text-white group-hover:scale-110 transition-all duration-[1200ms]" />
                   </div>
                   
-                  <h3 className="text-base md:text-lg font-semibold text-white mb-2 group-hover:text-purple-300 transition-all duration-[1200ms] cursor-default">
+                  <h3 className="text-base md:text-lg font-semibold text-white mb-2 hover:text-purple-300 hover:scale-105 transition-all duration-[1200ms] cursor-default">
                     {skill.title}
                   </h3>
                   
-                  <p className="text-gray-400 text-xs md:text-sm group-hover:text-gray-200 transition-all duration-[1200ms] cursor-default leading-relaxed">
+                  <p className="text-gray-400 text-xs md:text-sm hover:text-gray-200 transition-all duration-[1200ms] cursor-default leading-relaxed">
                     {skill.desc}
                   </p>
                 </div>
