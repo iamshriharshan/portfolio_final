@@ -69,22 +69,36 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
-            {/* Interlocked SH Logo - Inspired by Reference */}
+            {/* S Inside S + H Logo Design */}
             <div className="flex-shrink-0">
               <div className="relative group cursor-pointer">
-                {/* Main Interlocked SH Design */}
+                {/* Main Logo Container */}
                 <div className="relative w-16 h-12 md:w-20 md:h-14">
-                  {/* S Letter - Left Side */}
-                  <div className="absolute left-0 top-0 w-8 md:w-10 h-12 md:h-14 overflow-hidden">
+                  {/* Outer S Letter - Left Side */}
+                  <div className="absolute left-0 top-0 w-9 md:w-11 h-12 md:h-14 overflow-hidden">
                     <div className="relative w-full h-full">
-                      {/* S Top Curve */}
-                      <div className="absolute top-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-purple-500 to-purple-600 rounded-t-lg rounded-br-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      {/* Outer S - Top Curve */}
+                      <div className="absolute top-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-purple-500 to-purple-600 rounded-t-xl rounded-br-xl transform group-hover:scale-110 transition-all duration-[1200ms] opacity-90"></div>
                       
-                      {/* S Middle Bar */}
-                      <div className="absolute top-4 md:top-5 left-0 w-3/4 h-3 md:h-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-r-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      {/* Outer S - Middle Bar */}
+                      <div className="absolute top-4 md:top-5 left-0 w-3/4 h-3 md:h-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-r-xl transform group-hover:scale-110 transition-all duration-[1200ms] opacity-90"></div>
                       
-                      {/* S Bottom Curve */}
-                      <div className="absolute bottom-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-b-lg rounded-tr-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      {/* Outer S - Bottom Curve */}
+                      <div className="absolute bottom-0 left-0 w-full h-4 md:h-5 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-b-xl rounded-tr-xl transform group-hover:scale-110 transition-all duration-[1200ms] opacity-90"></div>
+                    </div>
+                  </div>
+
+                  {/* Inner S Letter - Nested Inside Outer S */}
+                  <div className="absolute left-1.5 md:left-2 top-1.5 md:top-2 w-6 md:w-7 h-9 md:h-10 overflow-hidden z-10">
+                    <div className="relative w-full h-full">
+                      {/* Inner S - Top Curve */}
+                      <div className="absolute top-0 left-0 w-full h-2.5 md:h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-t-lg rounded-br-lg transform group-hover:scale-125 group-hover:rotate-3 transition-all duration-[1200ms] shadow-lg"></div>
+                      
+                      {/* Inner S - Middle Bar */}
+                      <div className="absolute top-3 md:top-3.5 left-0 w-2/3 h-2 md:h-2.5 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-r-lg transform group-hover:scale-125 group-hover:-rotate-2 transition-all duration-[1200ms] shadow-lg"></div>
+                      
+                      {/* Inner S - Bottom Curve */}
+                      <div className="absolute bottom-0 left-0 w-full h-2.5 md:h-3 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-b-lg rounded-tr-lg transform group-hover:scale-125 group-hover:rotate-3 transition-all duration-[1200ms] shadow-lg"></div>
                     </div>
                   </div>
 
@@ -92,32 +106,40 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
                   <div className="absolute right-0 top-0 w-8 md:w-10 h-12 md:h-14 overflow-hidden">
                     <div className="relative w-full h-full">
                       {/* H Left Vertical */}
-                      <div className="absolute left-0 top-0 w-2.5 md:w-3 h-full bg-gradient-to-b from-cyan-500 to-blue-500 rounded-l-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      <div className="absolute left-0 top-0 w-2.5 md:w-3 h-full bg-gradient-to-b from-cyan-500 to-blue-500 rounded-l-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                       
                       {/* H Right Vertical */}
-                      <div className="absolute right-0 top-0 w-2.5 md:w-3 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      <div className="absolute right-0 top-0 w-2.5 md:w-3 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                       
                       {/* H Middle Bar (Interlocking with S) */}
-                      <div className="absolute top-4 md:top-5 right-0 w-3/4 h-3 md:h-4 bg-gradient-to-l from-blue-600 to-cyan-500 rounded-l-lg transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
+                      <div className="absolute top-4 md:top-5 right-0 w-3/4 h-3 md:h-4 bg-gradient-to-l from-blue-600 to-cyan-500 rounded-l-xl transform group-hover:scale-110 transition-all duration-[1200ms]"></div>
                     </div>
                   </div>
 
-                  {/* Interlocking Connection */}
-                  <div className="absolute top-4 md:top-5 left-6 md:left-7 w-4 md:w-6 h-3 md:h-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded transform group-hover:scale-125 transition-all duration-[1200ms] z-10"></div>
+                  {/* Enhanced Interlocking Connection */}
+                  <div className="absolute top-4 md:top-5 left-6 md:left-7 w-5 md:w-7 h-3 md:h-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-lg transform group-hover:scale-125 group-hover:rotate-6 transition-all duration-[1200ms] z-20 shadow-xl"></div>
 
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-cyan-500/30 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] -z-10 scale-150"></div>
+                  {/* Enhanced Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-cyan-500/30 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] -z-10 scale-150"></div>
                   
-                  {/* Floating Particles */}
+                  {/* Inner S Glow Effect */}
+                  <div className="absolute left-1.5 md:left-2 top-1.5 md:top-2 w-6 md:w-7 h-9 md:h-10 bg-gradient-to-r from-cyan-400/40 via-blue-400/40 to-indigo-400/40 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] -z-5"></div>
+                  
+                  {/* Enhanced Floating Particles */}
                   <div className="absolute -inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]">
-                    <div className="absolute top-0 left-2 w-1 h-1 bg-purple-400 rounded-full animate-gentle-bounce"></div>
-                    <div className="absolute top-1 right-2 w-1 h-1 bg-cyan-400 rounded-full animate-gentle-bounce" style={{animationDelay: '0.3s'}}></div>
-                    <div className="absolute bottom-1 left-4 w-1 h-1 bg-pink-400 rounded-full animate-gentle-bounce" style={{animationDelay: '0.6s'}}></div>
-                    <div className="absolute bottom-0 right-4 w-1 h-1 bg-blue-400 rounded-full animate-gentle-bounce" style={{animationDelay: '0.9s'}}></div>
+                    <div className="absolute top-0 left-2 w-1.5 h-1.5 bg-purple-400 rounded-full animate-gentle-bounce shadow-lg"></div>
+                    <div className="absolute top-1 right-2 w-1 h-1 bg-cyan-400 rounded-full animate-gentle-bounce shadow-lg" style={{animationDelay: '0.3s'}}></div>
+                    <div className="absolute bottom-1 left-4 w-1 h-1 bg-pink-400 rounded-full animate-gentle-bounce shadow-lg" style={{animationDelay: '0.6s'}}></div>
+                    <div className="absolute bottom-0 right-4 w-1.5 h-1.5 bg-blue-400 rounded-full animate-gentle-bounce shadow-lg" style={{animationDelay: '0.9s'}}></div>
+                    <div className="absolute top-2 left-6 w-1 h-1 bg-indigo-400 rounded-full animate-gentle-bounce shadow-lg" style={{animationDelay: '1.2s'}}></div>
                   </div>
+
+                  {/* Nested S Indicator Lines */}
+                  <div className="absolute left-0.5 top-0.5 w-1 h-1 bg-gradient-to-r from-purple-300 to-cyan-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] animate-pulse"></div>
+                  <div className="absolute left-0.5 bottom-0.5 w-1 h-1 bg-gradient-to-r from-cyan-300 to-purple-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] animate-pulse" style={{animationDelay: '0.5s'}}></div>
                 </div>
                 
-                {/* Subtle Brand Text */}
+                {/* Enhanced Brand Text */}
                 <div className="absolute -bottom-6 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms]">
                   <span className="text-xs text-gray-400 font-medium tracking-wider">HARSHAN</span>
                 </div>
