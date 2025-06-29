@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
         {puzzleBricks.map((brick) => (
           <div
             key={brick.id}
-            className={`absolute bg-gradient-to-br ${brick.color} rounded-lg opacity-30 animate-gentle-bounce transform transition-all duration-[2000ms] ease-out hover:scale-125 hover:opacity-60 cursor-pointer`}
+            className={`absolute bg-gradient-to-br ${brick.color} rounded-lg opacity-30 animate-gentle-bounce transform transition-all duration-[1200ms] ease-out hover:scale-125 hover:opacity-60 cursor-pointer`}
             style={{
               left: `${brick.x}%`,
               top: `${brick.y}%`,
@@ -118,9 +118,9 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
-          {/* Premium Content */}
-          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+        <div className="w-full">
+          {/* Premium Content - Centered Layout */}
+          <div className="text-center mb-12 lg:mb-16">
             <div className="space-y-4">
               <div className="overflow-hidden">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white animate-slide-up hover:scale-105 transition-all duration-[1200ms] cursor-default">
@@ -135,12 +135,12 @@ const Hero: React.FC = () => {
                   <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light hover:text-gray-100 transition-all duration-[1200ms] cursor-default">
                     AI Developer & Full Stack Engineer
                   </h2>
-                  <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 mx-auto lg:mx-0 hover:w-28 hover:h-1.5 transition-all duration-[1200ms]"></div>
+                  <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 mx-auto hover:w-28 hover:h-1.5 transition-all duration-[1200ms]"></div>
                 </div>
               </div>
               
               <div className="overflow-hidden">
-                <p className="text-base md:text-lg text-gray-400 max-w-lg leading-relaxed animate-slide-up-delay-2 mx-auto lg:mx-0 hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
+                <p className="text-base md:text-lg text-gray-400 max-w-2xl leading-relaxed animate-slide-up-delay-2 mx-auto hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
                   4th year student at NITK, passionate about AI and building intelligent solutions. 
                   Specializing in NLP, cybersecurity, and modern web technologies.
                 </p>
@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Premium CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up-delay-3 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up-delay-3 justify-center mt-8">
               <button 
                 onClick={scrollToProjects}
                 className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-xl btn-3d overflow-hidden"
@@ -168,7 +168,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Premium Social Links */}
-            <div className="flex space-x-4 md:space-x-6 animate-slide-up-delay-4 justify-center lg:justify-start">
+            <div className="flex space-x-4 md:space-x-6 animate-slide-up-delay-4 justify-center mt-6">
               {[
                 { icon: Github, href: 'https://github.com/iamshriharshan', label: 'GitHub' },
                 { icon: Linkedin, href: 'https://www.linkedin.com/in/shri-harshan/', label: 'LinkedIn' },
@@ -192,8 +192,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Premium Profile Image with 3D Effects */}
-          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+          {/* Premium Profile Image with Tech Bubbles - Centered */}
+          <div className="flex justify-center">
             <div 
               className="relative transform transition-all duration-[1500ms] ease-out hover:scale-105"
               style={{
@@ -201,14 +201,14 @@ const Hero: React.FC = () => {
               }}
             >
               {/* Premium animated puzzle pieces around profile */}
-              <div className="absolute -inset-16 md:-inset-20">
+              <div className="absolute -inset-20 md:-inset-24">
                 {[...Array(16)].map((_, i) => (
                   <div
                     key={i}
                     className={`absolute w-3 md:w-4 h-3 md:h-4 bg-gradient-to-br from-purple-500/30 to-cyan-500/30 rounded-md transform animate-gentle-bounce opacity-40 hover:opacity-70 hover:scale-125 transition-all duration-[1200ms] cursor-pointer`}
                     style={{
-                      left: `${30 + Math.cos(i * 22.5 * Math.PI / 180) * (window.innerWidth < 768 ? 100 : 130)}px`,
-                      top: `${30 + Math.sin(i * 22.5 * Math.PI / 180) * (window.innerWidth < 768 ? 100 : 130)}px`,
+                      left: `${50 + Math.cos(i * 22.5 * Math.PI / 180) * (window.innerWidth < 768 ? 120 : 150)}%`,
+                      top: `${50 + Math.sin(i * 22.5 * Math.PI / 180) * (window.innerWidth < 768 ? 120 : 150)}%`,
                       animationDelay: `${i * 0.2}s`,
                       animationDuration: `${4 + (i % 3)}s`,
                       transform: `rotate(${i * 22.5}deg) scale(${0.8 + (i % 3) * 0.1})`
@@ -236,27 +236,35 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               
-              {/* Premium floating AI elements - Square Bubbles */}
-              <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-12 md:w-14 h-12 md:h-14 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-purple-500/30 border border-purple-400/20">
-                <span className="text-white font-bold text-xs md:text-sm">AI</span>
+              {/* Premium floating Tech Bubbles - Positioned around center */}
+              {/* AI - Top */}
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-purple-500/30 border border-purple-400/20">
+                <span className="text-white font-bold text-sm">AI</span>
               </div>
-              <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-11 md:w-13 h-11 md:h-13 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-cyan-500/30 border border-cyan-400/20" style={{animationDelay: '1s'}}>
+              
+              {/* ML - Top Right */}
+              <div className="absolute -top-4 -right-8 w-12 h-12 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-cyan-500/30 border border-cyan-400/20" style={{animationDelay: '0.5s'}}>
                 <span className="text-white font-bold text-xs">ML</span>
               </div>
-              <div className="absolute top-1/2 -right-6 md:-right-8 w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-lg animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-indigo-500/30 border border-indigo-400/20" style={{animationDelay: '0.5s'}}>
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">NLP</span>
-                </div>
+              
+              {/* DEV - Right */}
+              <div className="absolute top-1/2 -right-10 transform -translate-y-1/2 w-13 h-13 bg-gradient-to-br from-orange-600 to-orange-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-orange-500/30 border border-orange-400/20" style={{animationDelay: '1s'}}>
+                <span className="text-white font-bold text-xs">DEV</span>
               </div>
-              <div className="absolute top-1/4 -left-6 md:-left-8 w-9 md:w-11 h-9 md:h-11 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-emerald-500/30 border border-emerald-400/20" style={{animationDelay: '1.5s'}}>
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">SEC</span>
-                </div>
+              
+              {/* CS - Bottom Right */}
+              <div className="absolute -bottom-4 -right-6 w-11 h-11 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-emerald-500/30 border border-emerald-400/20" style={{animationDelay: '1.5s'}}>
+                <span className="text-white font-bold text-xs">CS</span>
               </div>
-              <div className="absolute bottom-1/4 right-1/4 w-8 md:w-10 h-8 md:h-10 bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-orange-500/30 border border-orange-400/20" style={{animationDelay: '2s'}}>
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">DEV</span>
-                </div>
+              
+              {/* NLP - Bottom */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-indigo-500/30 border border-indigo-400/20" style={{animationDelay: '2s'}}>
+                <span className="text-white font-bold text-xs">NLP</span>
+              </div>
+              
+              {/* Additional tech bubble - Left */}
+              <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-pink-500/30 border border-pink-400/20" style={{animationDelay: '2.5s'}}>
+                <span className="text-white font-bold text-xs">3D</span>
               </div>
             </div>
           </div>

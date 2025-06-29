@@ -29,24 +29,6 @@ const Projects: React.FC = () => {
       githubUrl: 'https://github.com/iamshriharshan',
       featured: true,
       icon: Users
-    },
-    {
-      title: 'AI Chatbot Platform',
-      description: 'A sophisticated chatbot platform with natural language understanding, context awareness, and multi-domain knowledge integration for enhanced user interactions.',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Python', 'NLP', 'Deep Learning', 'FastAPI', 'PostgreSQL'],
-      githubUrl: 'https://github.com/iamshriharshan',
-      featured: false,
-      icon: Terminal
-    },
-    {
-      title: 'Security Vulnerability Scanner',
-      description: 'An automated security scanning tool that identifies vulnerabilities in web applications, with detailed reporting and remediation suggestions.',
-      image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Python', 'Security Testing', 'Web Scraping', 'Automation'],
-      githubUrl: 'https://github.com/iamshriharshan',
-      featured: false,
-      icon: Search
     }
   ];
 
@@ -61,13 +43,13 @@ const Projects: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 card-hover cursor-default">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 hover:scale-105 transition-all duration-[1200ms] cursor-default">
             Featured <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-cyan-300 transition-all duration-[1500ms]">Projects</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto hover:text-gray-200 transition-all duration-[1200ms] cursor-default">
             A showcase of my innovative solutions combining AI, security, and modern web technologies.
           </p>
-          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 animate-pulse hover:w-32 hover:h-2 transition-all duration-[1500ms]"></div>
+          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 hover:w-32 hover:h-2 transition-all duration-[1200ms]"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -86,9 +68,9 @@ const Projects: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-all duration-[1800ms] group-hover:scale-125 group-hover:brightness-110"
+                    className="w-full h-full object-cover transition-all duration-[1200ms] group-hover:scale-110 group-hover:brightness-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-[1500ms]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-[1200ms]"></div>
                   
                   {/* Enhanced floating icon */}
                   <div className="absolute top-4 right-4 w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center card-hover">
@@ -96,7 +78,7 @@ const Projects: React.FC = () => {
                   </div>
                   
                   {project.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse hover:scale-110 transition-all duration-[1200ms] cursor-pointer">
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full hover:scale-110 transition-all duration-[1200ms] cursor-pointer">
                       FEATURED
                     </div>
                   )}
@@ -142,7 +124,7 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Enhanced hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/8 to-cyan-600/8 opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms] pointer-events-none rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/8 to-cyan-600/8 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] pointer-events-none rounded-2xl"></div>
               </div>
             );
           })}
