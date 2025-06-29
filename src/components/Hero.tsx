@@ -236,35 +236,35 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               
-              {/* Premium floating Tech Bubbles - Positioned around image */}
-              {/* AI - Top */}
+              {/* Premium floating Tech Bubbles - Positioned around image with proper alignment */}
+              {/* AI - Top Center */}
               <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-purple-500/30 border border-purple-400/20">
                 <span className="text-white font-bold text-sm">AI</span>
               </div>
               
-              {/* ML - Top Right */}
-              <div className="absolute -top-4 -right-8 w-12 h-12 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-cyan-500/30 border border-cyan-400/20" style={{animationDelay: '0.5s'}}>
-                <span className="text-white font-bold text-xs">ML</span>
+              {/* 3D - Top Right */}
+              <div className="absolute -top-4 -right-8 w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-pink-500/30 border border-pink-400/20" style={{animationDelay: '0.5s'}}>
+                <span className="text-white font-bold text-xs">3D</span>
               </div>
               
-              {/* DEV - Right */}
+              {/* DEV - Right Center */}
               <div className="absolute top-1/2 -right-10 transform -translate-y-1/2 w-13 h-13 bg-gradient-to-br from-orange-600 to-orange-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-orange-500/30 border border-orange-400/20" style={{animationDelay: '1s'}}>
                 <span className="text-white font-bold text-xs">DEV</span>
               </div>
               
-              {/* CS - Bottom Right */}
+              {/* SEC - Bottom Right */}
               <div className="absolute -bottom-4 -right-6 w-11 h-11 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-emerald-500/30 border border-emerald-400/20" style={{animationDelay: '1.5s'}}>
-                <span className="text-white font-bold text-xs">CS</span>
+                <span className="text-white font-bold text-xs">SEC</span>
               </div>
               
-              {/* NLP - Bottom */}
-              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-indigo-500/30 border border-indigo-400/20" style={{animationDelay: '2s'}}>
+              {/* ML - Bottom Center */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-cyan-500/30 border border-cyan-400/20" style={{animationDelay: '2s'}}>
+                <span className="text-white font-bold text-xs">ML</span>
+              </div>
+              
+              {/* NLP - Left Center */}
+              <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-indigo-500/30 border border-indigo-400/20" style={{animationDelay: '2.5s'}}>
                 <span className="text-white font-bold text-xs">NLP</span>
-              </div>
-              
-              {/* 3D - Left */}
-              <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 w-10 h-10 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-pink-500/30 border border-pink-400/20" style={{animationDelay: '2.5s'}}>
-                <span className="text-white font-bold text-xs">3D</span>
               </div>
             </div>
           </div>
