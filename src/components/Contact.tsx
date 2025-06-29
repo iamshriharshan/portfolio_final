@@ -25,7 +25,6 @@ const Contact: React.FC = () => {
     setSubmitStatus('idle');
     
     try {
-      // Using Formspree for form handling
       const response = await fetch('https://formspree.io/f/mnnvlqkl', {
         method: 'POST',
         headers: {
@@ -89,51 +88,51 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-purple-900/10 to-gray-900 relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-20 bg-gradient-to-br from-gray-900 via-purple-900/10 to-gray-900 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '3s'}}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 hover:scale-105 transition-transform duration-500">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 hover:scale-105 transition-transform duration-700">
             Get In <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto hover:text-gray-300 transition-colors duration-300">
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto hover:text-gray-300 transition-colors duration-500">
             Ready to bring your ideas to life? Let's discuss your next project and create something extraordinary together.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 animate-pulse"></div>
+          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6 animate-pulse"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6 hover:text-purple-300 transition-colors duration-300">Let's Start a Conversation</h3>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8 hover:text-gray-300 transition-colors duration-300">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 hover:text-purple-300 transition-colors duration-500">Let's Start a Conversation</h3>
+              <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 hover:text-gray-300 transition-colors duration-500">
                 Whether you have a project in mind, need security consultation, or want to collaborate 
                 on innovative AI solutions, I'm always excited to connect with fellow creators and innovators.
               </p>
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
                   <a
                     key={index}
                     href={info.href}
-                    className="group flex items-center space-x-4 p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-700 hover:scale-105 hover:-translate-y-2 card-hover"
+                    className="group flex items-center space-x-4 p-4 md:p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-800 hover:scale-105 hover:-translate-y-3 card-hover"
                   >
-                    <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                      <Icon className="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-300" />
+                    <div className="w-12 md:w-14 h-12 md:h-14 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-600">
+                      <Icon className="w-6 md:w-7 h-6 md:h-7 text-white group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{info.label}</div>
-                      <div className="text-white font-medium group-hover:text-purple-300 transition-colors duration-300">
+                      <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-500">{info.label}</div>
+                      <div className="text-white font-medium group-hover:text-purple-300 transition-colors duration-500 text-sm md:text-base">
                         {info.value}
                       </div>
                     </div>
@@ -144,7 +143,7 @@ const Contact: React.FC = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4 hover:text-purple-300 transition-colors duration-300">Connect With Me</h4>
+              <h4 className="text-lg font-semibold text-white mb-4 hover:text-purple-300 transition-colors duration-500">Connect With Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
@@ -154,10 +153,10 @@ const Contact: React.FC = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group w-14 h-14 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-700 hover:scale-125 hover:-translate-y-2"
+                      className="group w-12 md:w-14 h-12 md:h-14 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-800 hover:scale-125 hover:-translate-y-3"
                       aria-label={social.label}
                     >
-                      <Icon className="w-6 h-6 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" />
+                      <Icon className="w-5 md:w-6 h-5 md:h-6 transition-all duration-600 group-hover:scale-125 group-hover:rotate-12" />
                     </a>
                   );
                 })}
@@ -168,8 +167,8 @@ const Contact: React.FC = () => {
           {/* Contact Form */}
           <div className="relative">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
-                <h3 className="text-2xl font-bold text-white mb-6 hover:text-purple-300 transition-colors duration-300">Send Me a Message</h3>
+              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 md:p-8 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-700">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-6 hover:text-purple-300 transition-colors duration-500">Send Me a Message</h3>
                 
                 {/* Success/Error Messages */}
                 {submitStatus === 'success' && (
@@ -198,7 +197,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-500 hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-600 hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
                       placeholder="Your Name"
                     />
                   </div>
@@ -214,7 +213,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-500 hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-600 hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -231,7 +230,7 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-500 hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-600 hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
                     placeholder="Let's work together!"
                   />
                 </div>
@@ -247,7 +246,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-500 resize-none hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none transition-all duration-600 resize-none hover:border-gray-500/70 focus:scale-105 focus:-translate-y-1"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -255,7 +254,7 @@ const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-xl transition-all duration-700 transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:scale-100 disabled:hover:translate-y-0 btn-3d"
+                  className="group relative w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-xl transition-all duration-800 transform hover:scale-105 hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-500/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:scale-100 disabled:hover:translate-y-0 btn-3d"
                 >
                   <span className="relative z-10 flex items-center justify-center space-x-2">
                     {isSubmitting ? (
@@ -265,12 +264,12 @@ const Contact: React.FC = () => {
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5 transform group-hover:translate-x-1 group-hover:scale-110 transition-all duration-500" />
+                        <Send className="w-5 h-5 transform group-hover:translate-x-1 group-hover:scale-110 transition-all duration-600" />
                         <span>Send Message</span>
                       </>
                     )}
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-cyan-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-cyan-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-800"></div>
                 </button>
               </div>
             </form>
