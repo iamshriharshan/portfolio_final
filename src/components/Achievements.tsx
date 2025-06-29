@@ -1,10 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Trophy, Award, Star, Code, Shield, GitBranch } from 'lucide-react';
 
 const Achievements: React.FC = () => {
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   const achievements = [
     {
       title: 'WHO Hall of Fame',
@@ -48,35 +45,6 @@ const Achievements: React.FC = () => {
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = parseInt(entry.target.getAttribute('data-index') || '0');
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              setVisibleItems(prev => [...prev, index]);
-            }, index * 200);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '-50px 0px -50px 0px'
-      }
-    );
-
-    itemRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      itemRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
-
   return (
     <section id="achievements" className="py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 relative overflow-hidden">
       {/* Enhanced background decorations */}
@@ -100,18 +68,11 @@ const Achievements: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => {
             const Icon = achievement.icon;
-            const isVisible = visibleItems.includes(index);
             
             return (
               <div
                 key={index}
-                ref={el => itemRefs.current[index] = el}
-                data-index={index}
-                className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 card-hover overflow-hidden transition-all duration-[2000ms] ease-out ${
-                  isVisible 
-                    ? 'opacity-100 transform translate-y-0 scale-100' 
-                    : 'opacity-0 transform translate-y-12 scale-95'
-                }`}
+                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 card-hover overflow-hidden"
               >
                 {/* Enhanced hover glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/8 to-orange-600/8 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms]"></div>

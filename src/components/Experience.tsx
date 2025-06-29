@@ -1,10 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Calendar, MapPin, Award, TrendingUp, Shield, Search, MessageCircle, Palette } from 'lucide-react';
 
 const Experience: React.FC = () => {
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   const experiences = [
     {
       title: 'Security Researcher',
@@ -72,35 +69,6 @@ const Experience: React.FC = () => {
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = parseInt(entry.target.getAttribute('data-index') || '0');
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              setVisibleItems(prev => [...prev, index]);
-            }, index * 300);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '-50px 0px -50px 0px'
-      }
-    );
-
-    itemRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      itemRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
-
   return (
     <section id="experience" className="py-20 bg-gray-900 relative overflow-hidden">
       {/* Enhanced background decorations */}
@@ -128,19 +96,12 @@ const Experience: React.FC = () => {
           <div className="space-y-16">
             {experiences.map((exp, index) => {
               const Icon = exp.icon;
-              const isVisible = visibleItems.includes(index);
               
               return (
                 <div
                   key={index}
-                  ref={el => itemRefs.current[index] = el}
-                  data-index={index}
-                  className={`relative flex items-center transition-all duration-[2000ms] ease-out ${
+                  className={`relative flex items-center ${
                     index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } ${
-                    isVisible 
-                      ? 'opacity-100 transform translate-y-0 scale-100' 
-                      : 'opacity-0 transform translate-y-16 scale-95'
                   }`}
                 >
                   {/* Enhanced Timeline dot */}
