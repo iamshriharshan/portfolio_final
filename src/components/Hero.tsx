@@ -192,8 +192,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Premium Profile Image with Tech Bubbles - Right Side */}
-          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+          {/* Premium Profile Image with Tech Bubbles - Right Side - MOVED DOWN */}
+          <div className="relative flex justify-center lg:justify-end mt-16 lg:mt-12">
             <div 
               className="relative transform transition-all duration-[1500ms] ease-out hover:scale-105"
               style={{
@@ -238,33 +238,44 @@ const Hero: React.FC = () => {
               
               {/* Premium floating Tech Bubbles - Positioned around image with proper alignment */}
               {/* AI - Top Center */}
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-purple-500/30 border border-purple-400/20">
-                <span className="text-white font-bold text-sm">AI</span>
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-purple-500/40 border border-purple-400/30">
+                <span className="text-white font-bold text-lg">AI</span>
               </div>
               
               {/* 3D - Top Right */}
-              <div className="absolute -top-4 -right-8 w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-pink-500/30 border border-pink-400/20" style={{animationDelay: '0.5s'}}>
-                <span className="text-white font-bold text-xs">3D</span>
+              <div className="absolute -top-8 -right-12 w-14 h-14 bg-gradient-to-br from-pink-600 to-pink-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-pink-500/40 border border-pink-400/30" style={{animationDelay: '0.5s'}}>
+                <span className="text-white font-bold text-base">3D</span>
               </div>
               
               {/* DEV - Right Center */}
-              <div className="absolute top-1/2 -right-10 transform -translate-y-1/2 w-13 h-13 bg-gradient-to-br from-orange-600 to-orange-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-orange-500/30 border border-orange-400/20" style={{animationDelay: '1s'}}>
-                <span className="text-white font-bold text-xs">DEV</span>
+              <div className="absolute top-1/2 -right-16 transform -translate-y-1/2 w-15 h-15 bg-gradient-to-br from-orange-600 to-orange-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-orange-500/40 border border-orange-400/30" style={{animationDelay: '1s'}}>
+                <span className="text-white font-bold text-sm">DEV</span>
               </div>
               
               {/* SEC - Bottom Right */}
-              <div className="absolute -bottom-4 -right-6 w-11 h-11 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-emerald-500/30 border border-emerald-400/20" style={{animationDelay: '1.5s'}}>
-                <span className="text-white font-bold text-xs">SEC</span>
+              <div className="absolute -bottom-8 -right-10 w-13 h-13 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-emerald-500/40 border border-emerald-400/30" style={{animationDelay: '1.5s'}}>
+                <span className="text-white font-bold text-sm">SEC</span>
               </div>
               
               {/* ML - Bottom Center */}
-              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-cyan-500/30 border border-cyan-400/20" style={{animationDelay: '2s'}}>
-                <span className="text-white font-bold text-xs">ML</span>
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-cyan-500/40 border border-cyan-400/30" style={{animationDelay: '2s'}}>
+                <span className="text-white font-bold text-base">ML</span>
               </div>
               
               {/* NLP - Left Center */}
-              <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-lg shadow-indigo-500/30 border border-indigo-400/20" style={{animationDelay: '2.5s'}}>
-                <span className="text-white font-bold text-xs">NLP</span>
+              <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-indigo-500/40 border border-indigo-400/30" style={{animationDelay: '2.5s'}}>
+                <span className="text-white font-bold text-sm">NLP</span>
+              </div>
+
+              {/* Additional Tech Bubbles for Better Surrounding */}
+              {/* WEB - Top Left */}
+              <div className="absolute -top-8 -left-12 w-13 h-13 bg-gradient-to-br from-violet-600 to-violet-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-violet-500/40 border border-violet-400/30" style={{animationDelay: '3s'}}>
+                <span className="text-white font-bold text-xs">WEB</span>
+              </div>
+
+              {/* API - Bottom Left */}
+              <div className="absolute -bottom-8 -left-10 w-12 h-12 bg-gradient-to-br from-teal-600 to-teal-700 rounded-2xl flex items-center justify-center animate-gentle-bounce card-hover cursor-pointer shadow-xl shadow-teal-500/40 border border-teal-400/30" style={{animationDelay: '3.5s'}}>
+                <span className="text-white font-bold text-xs">API</span>
               </div>
             </div>
           </div>
